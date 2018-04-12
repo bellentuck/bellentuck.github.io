@@ -4,12 +4,15 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Software engineer, queries to styles
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+JavaScript @ [Fullstack](https://www.fullstackacademy.com/)
+Web Dev @ [Wake Forest](https://build.zsr.wfu.edu/)
+Data Science @ [Metis](https://www.thisismetis.com/)
+Philosophy @ [Swarthmore](https://www.swarthmore.edu/philosophy)
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[twitter?](https://twitter.com/bellentuck)
