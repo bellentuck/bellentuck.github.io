@@ -15,15 +15,25 @@ Full-stack software engineer: expertise in JavaScript, React, Redux, Node, ORMs,
 ### Technical Projects
 At Fullstack:
 - DevBook ([Firebase](https://codesnippets-c9eee.firebaseapp.com/), [GitHub](https://github.com/devbook-live))
+
    JS coding workbook with realtime container provisioning, inspired by Beaker and RunKit.
+
    Led API work; notebook interaction design and UI; and microservice refactors, docs, testing.
+
    Technologies used: Node, Docker, React, Firebase, CodeMirror, Material UI.
+
 - regbin ([npm](http://npm.im/regbin), [GitHub](https://github.com/bellentuck/regbin))
+
    Form validation function generator: regularized bindings for form fields against which to test data.
+
    Built-in support for 32 default fields, async and custom validators, Redux Form.
+
    Nerd Cred award for most technically challenging project, Fullstack Academy “Stackathon.”
+
 - D & D ([Heroku](https://dd-wine.herokuapp.com/), [GitHub](https://github.com/dd-grace-shopper/dd-grace-shopper))
+
    Architected app flows, built out API, practiced TDD, became the go-to debugger.
+
    Stack: Node, Express, Sequelize, React-Redux, Flexbox; APIs: Passport, Stripe, Semantic UI.
 
 At Wake Forest:
