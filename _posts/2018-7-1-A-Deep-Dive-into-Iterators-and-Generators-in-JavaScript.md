@@ -68,8 +68,8 @@ Iterables are thus objects that can be iterated over, according to the iterator 
 
 ### Iterator protocol
 In the context of the iterator protocol, [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) defines iteration as “a standard way to produce a sequence of values (either finite or infinite).” An object thus accords with the iterator protocol when
-(a) it knows how to access items from a collection one at a time, while
-(b) keeping track of its current position within that sequence.
+1. it knows how to access items from a collection one at a time, while
+2. keeping track of its current position within that sequence.
 An iterable is furthermore supposed to meet both these criteria in a particular way: An iterable must implement a `next()` method.
 
 #### `next()`
@@ -185,9 +185,9 @@ liftoff!
 
 #### Invoking a Generator
 Let's dispel some magic. What happens when we invoke the `myGenerator` function?
-(1) A new iterable "generator object" is created: `const generatorObj = {}`. (You cannot use the “new” keyword to construct an iterable generator object. Instead, you must create a generator function and invoke it.)
-(2) A `Symbol.iterator` property is instantiated on the new iterable generator object, and set to the `myGenerator` function: `generatorObj[Symbol.iterator] = myGenerator`.
-(3) The iterable generator object is returned.
+1. A new iterable "generator object" is created: `const generatorObj = {}`. (You cannot use the “new” keyword to construct an iterable generator object. Instead, you must create a generator function and invoke it.)
+2. A `Symbol.iterator` property is instantiated on the new iterable generator object, and set to the `myGenerator` function: `generatorObj[Symbol.iterator] = myGenerator`.
+3. The iterable generator object is returned.
 
 Altogether, it works out like this:
 ```js
@@ -277,30 +277,30 @@ Before we dive into the control flow, let's address the `next(data)` call above.
 
 ###### Control Flow Walkthrough
 The generator/coroutine combo makes for the following sequence of events when calling `seed()`. (I'd encourage you to read over the following list primarily to get a sense of the general pattern, and only secondarily to try and understand how every line of code is working in each and every context.)
-(1) The first thing that happens when we call `seed()` is that `seedCoroutine` is called with our `seedGenerator` passed in as an argument.
-(2) `seedGenerator` is invoked, giving us an iterable object, `iterable`, whose `Symbol.iterator` property has been set to `seedGenerator`.
-(3) Still within `seedCoroutine`, the `doNext` function gets invoked with no arguments.
-(4) Within `doNext`, `data === undefined`. So when we call `next(data)` off `iterable`, we're effectively calling `next(undefined)`.
-(5) `seedCoroutine` "pauses" at `next()` and hands off control to `seedGenerator`.
-(6) `seedGenerator` runs, yielding an array of promises for a `hedgehogUser` instance and `hedgehogMoves` instances, respectively.
-(7) `seedGenerator` "pauses" at `yield` and hands off control to `seedCoroutine`.
-(8) `seedCoroutine` resumes right where it left off, at `next()`. `iterable.next(data)` becomes `{ value: Promise, done: false }`. We destructure the `value` and `done` properties off of this object.
-(9) `done === false`, so we wait until `value` settles. (We might also synchronously return a promise at this point to any outer scope requiring knowledge of what our coroutine is up to. This is how async/await works: an async function returns a promise that can eventually resolve to the async function's eventual return value.)
-(10) When `value` settles, we call `doNext`, passing in the resolved data as an argument: `doNext(resolvedData)`. In this case, the resolved data is an array of a `hedgehogUser` object and an array of `hedgehogMoves` objects.
-(11) We then call `iterable.next(resolvedData)`.
-(12) `seedCoroutine` "pauses" at `next()` and hands off control to `seedGenerator`.
-(13) `seedGenerator` resumes right where it left off, at `yield`. The entire yield statement (`yield Promise.all ...`) becomes `resolvedData`. We destructure `[ users, moves ]` from the `resolvedData` array.
-(14) `seedGenerator` continues execution. We reach the next `yield` statement, yielding a promise for the user on whom we want to set some moves.
-(15) `seedGenerator` "pauses" at `yield` and hands off control to `seedCoroutine`.
-(16) `seedCoroutine` resumes at `next()`. `iterable.next(previouslyResolvedData)` becomes `{ value: Promise, done: false }`. We destructure the `value` and `done` properties off of this object.
-(17) `done === false`, so we wait until `value` settles.
-(18) When `value` settles, we call `doNext`, passing in the resolved data as an argument: `doNext(newlyResolvedData)`. In this case, the resolved data is a single `hedgehogUser` instance.
-(19) We then call `iterable.next(newlyResolvedData)`.
-(20) `seedCoroutine` "pauses" at `next()` and hands off control to `seedGenerator`.
-(21) `seedGenerator` resumes at the same `yield` statement at which it left off. The entire yield statement (`yield user.setMoves(moves)`) becomes `newlyResolvedData`.
-(22) We hit the end of the `seedGenerator` function. By default, `seedGenerator` hands off control to `seedCoroutine`, passing back an object with `value: undefined` and `done: true`.
-(23) `seedCoroutine` resumes at `next()`. `iterable.next(data)` becomes `{ value: undefined, done: true }`. We destructure the `value` and `done` properties off of this object.
-(24) `done !== false`, so we don't have to wait until `value` settles. We're done!
+1. The first thing that happens when we call `seed()` is that `seedCoroutine` is called with our `seedGenerator` passed in as an argument.
+2. `seedGenerator` is invoked, giving us an iterable object, `iterable`, whose `Symbol.iterator` property has been set to `seedGenerator`.
+3. Still within `seedCoroutine`, the `doNext` function gets invoked with no arguments.
+4. Within `doNext`, `data === undefined`. So when we call `next(data)` off `iterable`, we're effectively calling `next(undefined)`.
+5. `seedCoroutine` "pauses" at `next()` and hands off control to `seedGenerator`.
+6. `seedGenerator` runs, yielding an array of promises for a `hedgehogUser` instance and `hedgehogMoves` instances, respectively.
+7. `seedGenerator` "pauses" at `yield` and hands off control to `seedCoroutine`.
+8. `seedCoroutine` resumes right where it left off, at `next()`. `iterable.next(data)` becomes `{ value: Promise, done: false }`. We destructure the `value` and `done` properties off of this object.
+9. `done === false`, so we wait until `value` settles. (We might also synchronously return a promise at this point to any outer scope requiring knowledge of what our coroutine is up to. This is how async/await works: an async function returns a promise that can eventually resolve to the async function's eventual return value.)
+10. When `value` settles, we call `doNext`, passing in the resolved data as an argument: `doNext(resolvedData)`. In this case, the resolved data is an array of a `hedgehogUser` object and an array of `hedgehogMoves` objects.
+11. We then call `iterable.next(resolvedData)`.
+12. `seedCoroutine` "pauses" at `next()` and hands off control to `seedGenerator`.
+13. `seedGenerator` resumes right where it left off, at `yield`. The entire yield statement (`yield Promise.all ...`) becomes `resolvedData`. We destructure `[ users, moves ]` from the `resolvedData` array.
+14. `seedGenerator` continues execution. We reach the next `yield` statement, yielding a promise for the user on whom we want to set some moves.
+15. `seedGenerator` "pauses" at `yield` and hands off control to `seedCoroutine`.
+16. `seedCoroutine` resumes at `next()`. `iterable.next(previouslyResolvedData)` becomes `{ value: Promise, done: false }`. We destructure the `value` and `done` properties off of this object.
+17. `done === false`, so we wait until `value` settles.
+18. When `value` settles, we call `doNext`, passing in the resolved data as an argument: `doNext(newlyResolvedData)`. In this case, the resolved data is a single `hedgehogUser` instance.
+19. We then call `iterable.next(newlyResolvedData)`.
+20. `seedCoroutine` "pauses" at `next()` and hands off control to `seedGenerator`.
+21. `seedGenerator` resumes at the same `yield` statement at which it left off. The entire yield statement (`yield user.setMoves(moves)`) becomes `newlyResolvedData`.
+22. We hit the end of the `seedGenerator` function. By default, `seedGenerator` hands off control to `seedCoroutine`, passing back an object with `value: undefined` and `done: true`.
+23. `seedCoroutine` resumes at `next()`. `iterable.next(data)` becomes `{ value: undefined, done: true }`. We destructure the `value` and `done` properties off of this object.
+24. `done !== false`, so we don't have to wait until `value` settles. We're done!
 
 We have just seen how coroutines can manage generators to support custom iteration behavior. As the author of the by-now-clearly-inspiration-article-for-this-article, “Generators, Coroutines, Async/Await” notes of this use case:
 > As long as the generator only `yield`s promises, `next.value` will always be a promise. The coroutine calls then on the promise to run `doNext` again when the promise finishes. When `doNext` runs again, it unpauses the generator and gets the next promise. This repeats until there’s no more `yield`s in the generator. **Each time coroutine calls `next`, control passes to the generator. Each time the generator calls `yield`, control returns to coroutine.** This concept of passing control back and forth asynchronously is known as coroutine. You can use synchronous control flow with coroutines.
