@@ -53,6 +53,6 @@ At Metis:
 
 
 ### Contact me
-- [Email](ellentuckben@gmail.com)
-- [LinkedIn](linkedin.com/in/bellentuck)
+- [Email](mailto:ellentuckben@gmail.com)
+- [LinkedIn](https://linkedin.com/in/bellentuck)
 - [Twitter](https://twitter.com/bellentuck)
