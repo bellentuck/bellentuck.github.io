@@ -1,5 +1,3 @@
-# A Deep Dive into Iterators and Generators in JavaScript
-
 This article's a journey: The goal is to build to an understanding of generators from the ground up, detailing the intuitions behind why generators, and JavaScript generators in particular, work the way they do. Surprises along the way include iterables, symbols, coroutines, and async/await. Let's dive into square one!
 
 ## Intro to Iteration
