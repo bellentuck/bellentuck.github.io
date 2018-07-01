@@ -7,8 +7,8 @@ permalink: /about/
 Full-stack software engineer: expertise in JavaScript, React, Redux, Node, ORMs, TDD. Additional experience in Ruby on Rails, PHP, and the PyData stack. Current interests include data management, DevOps, and developer tools.
 
 ### Background
-- 2018-present: JavaScript @ [Fullstack](https://www.fullstackacademy.com/)
-- 2016-2017: Web Dev @ [Wake Forest](https://build.zsr.wfu.edu/)
+- 2018-present: Software Engineering @ [Fullstack](https://www.fullstackacademy.com/)
+- 2016-2017: Web Development @ [Wake Forest](https://build.zsr.wfu.edu/)
 - 2016: Data Science @ [Metis](https://www.thisismetis.com/)
 - 2014: Philosophy @ [Swarthmore](https://www.swarthmore.edu/philosophy)
 
