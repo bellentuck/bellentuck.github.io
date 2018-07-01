@@ -32,6 +32,8 @@ At Fullstack:
 
 - D & D ([Heroku](https://dd-wine.herokuapp.com/), [GitHub](https://github.com/dd-grace-shopper/dd-grace-shopper))
 
+   Ecommerce for an NYC-based spirits store.
+
    Architected app flows, built out API, practiced TDD, became the go-to debugger.
 
    Stack: Node, Express, Sequelize, React-Redux, Flexbox; APIs: Passport, Stripe, Semantic UI.
