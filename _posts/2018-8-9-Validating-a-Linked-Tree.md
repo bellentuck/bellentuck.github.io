@@ -92,18 +92,18 @@ function validateBst(tree, min = -Infinity, max = Infinity) {
 
 ```py
 def validateBst(tree, min = float('-inf'), max = float('inf')):
-  # 3 checks:
+    # 3 checks:
 
-	# (1) vacuously valid BST
-	if tree == None:
-		return True
+    # (1) vacuously valid BST
+    if tree == None:
+        return True
 
-	# (2) non-valid BST
-	if tree.value < min or tree.value >= max:
-		return False
+    # (2) non-valid BST
+    if tree.value < min or tree.value >= max:
+        return False
 
-	# (3) not necessarily invalid BST
-	return validateBst(tree.left, min, tree.value) and validateBst(tree.right, tree.value, max)
+    # (3) not necessarily invalid BST
+    return validateBst(tree.left, min, tree.value) and validateBst(tree.right, tree.value, max)
 ```
 
 
@@ -116,43 +116,43 @@ We will thus keep track of `min` and `max` values relative to each subtree we te
 ```js
 function validateBst(tree) {
   let min = -Infinity;
-	let max = Infinity;
-	let bstsToValidate = [{ tree, min, max }];
+  let max = Infinity;
+  let bstsToValidate = [{ tree, min, max }];
 
   while (bstsToValidate.length) {
-		const { tree, min, max } = bstsToValidate.pop();
+    const { tree, min, max } = bstsToValidate.pop();
 
     if (tree === null) continue;
-	  if (tree.value < min || tree.value >= max) return false;
+    if (tree.value < min || tree.value >= max) return false;
 
     bstsToValidate.push(
-			{ tree: tree.left, min, max: tree.value },
-			{ tree: tree.right, min: tree.value, max }
-		);
+      { tree: tree.left, min, max: tree.value },
+      { tree: tree.right, min: tree.value, max }
+    );
 
-	}
-	return true;
+  }
+  return true;
 }
 ```
 
 ```py
 def validateBst(tree):
-	initMin = float('-inf')
-	initMax = float('inf')
-	bstsToValidate = [(tree, initMin, initMax)]
+    initMin = float('-inf')
+    initMax = float('inf')
+    bstsToValidate = [(tree, initMin, initMax)]
 
-  while bstsToValidate:
-		tree, minimum, maximum = bstsToValidate.pop()
+    while bstsToValidate:
+        tree, minimum, maximum = bstsToValidate.pop()
 
-    if tree == None:
-			continue
-		if tree.value < minimum or tree.value >= maximum:
-			return False
+        if tree == None:
+            continue
+        if tree.value < minimum or tree.value >= maximum:
+            return False
 
-    bstsToValidate.append((tree.left, minimum, tree.value))
-		bstsToValidate.append((tree.right, tree.value, maximum))
+        bstsToValidate.append((tree.left, minimum, tree.value))
+        bstsToValidate.append((tree.right, tree.value, maximum))
 
-	return True
+    return True
 ```
 
 ## Concluding Complexity Analysis
