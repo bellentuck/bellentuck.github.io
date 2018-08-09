@@ -73,7 +73,7 @@ While recursion can appear less self-documenting than iteration in the abstract,
 
 If we cared about preserving the arity of our `validateBst` method (if we wanted it to only take one argument, the tree to test) we could factor out the validation procedure into a `validateBstHelper` method. Or, as below, we could just set default params for `min` and `max`.
 
-##### JS
+Javascript implementation:
 ```js
 function validateBst(tree, min = -Infinity, max = Infinity) {
   // 3 conditions to check:
@@ -88,7 +88,7 @@ function validateBst(tree, min = -Infinity, max = Infinity) {
   return validateBst(tree.left, min, tree.value) && validateBst(tree.right, tree.value, max);
 }
 ```
-##### Python
+Python implementation:
 ```py
 def validateBst(tree, min = float('-inf'), max = float('inf')):
     # 3 checks:
@@ -112,7 +112,7 @@ Recall how in the brute force approach, we iterate through every node *and separ
 
 We will thus keep track of `min` and `max` values relative to each subtree we test, pushing an object of this information onto a stack (we could equivalently implement this procedure using a queue). As in breadth-first search, once our supplementary data structure is empty we know we're out of options. In the case of testing the validity of a tree, being out of options means that the entire tree has been deemed valid: i.e., we haven't found any invalid subtrees. If we ever find one, we can short-circuit the procedure entirely.
 
-##### JS
+JS:
 ```js
 function validateBst(tree) {
   let min = -Infinity;
@@ -134,7 +134,7 @@ function validateBst(tree) {
   return true;
 }
 ```
-##### Python
+Python:
 ```py
 def validateBst(tree):
     initMin = float('-inf')
