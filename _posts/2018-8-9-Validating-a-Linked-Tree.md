@@ -1,5 +1,3 @@
-# Validating a Linked Tree
-
 This brief builds toward a strategy for testing the validity of a linked tree; recursive and iterative implementations are provided in Javascript and Python. A linked tree refers to a binary search tree ("BST") implemented via a linked list. The premise entails some preliminary question-posing. Before we can ask what it means for a linked tree to be valid, we ought to untangle the distinctions between linked tree, linked list, and BST. What even *is* a tree?
 
 ## What even *is* a tree?
