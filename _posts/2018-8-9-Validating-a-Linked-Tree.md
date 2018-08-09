@@ -89,7 +89,7 @@ function validateBst(tree, min = -Infinity, max = Infinity) {
 }
 ```
 Python implementation:
-```py
+```python
 def validateBst(tree, min = float('-inf'), max = float('inf')):
     # 3 checks:
 
@@ -135,7 +135,7 @@ function validateBst(tree) {
 }
 ```
 Python:
-```py
+```python
 def validateBst(tree):
     initMin = float('-inf')
     initMax = float('inf')
