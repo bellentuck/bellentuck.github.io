@@ -49,8 +49,7 @@ The convention computer scientists have adopted to contextualize regular grammar
 
 
 ## Regexes: food for finite automata
-While search pattern formulae make use of regular grammar, a *single* formula for a search pattern is called a regular language. In turn, regular grammar--implementable in a regular expression language--performs lexical analysis via use of a "finite automaton." Put another way, regexes are regular languages that can perform lexical analysis via use of finite automata. It can also be said that "a regular language can be *accepted by* a finite automaton" ([Bill Byrne, "Chomsky Hierarchy for Languages"]
-(https://www.youtube.com/watch?v=_ecle_FC6AE)).
+While search pattern formulae make use of regular grammar, a *single* formula for a search pattern is called a regular language. In turn, regular grammar--implementable in a regular expression language--performs lexical analysis via use of a "finite automaton." Put another way, regexes are regular languages that can perform lexical analysis via use of finite automata. It can also be said that "a regular language can be *accepted by* a finite automaton" ([Bill Byrne, "Chomsky Hierarchy for Languages"](https://www.youtube.com/watch?v=_ecle_FC6AE)).
 
 ### What's a finite automaton?
 A finite automaton is both a graph and a type of finite state machine. A finite state machine, in turn, refers to a collection of states with transitions between them. For instance, a finite state machine that only accepts the string `xyz` can be graphed in the following way:
