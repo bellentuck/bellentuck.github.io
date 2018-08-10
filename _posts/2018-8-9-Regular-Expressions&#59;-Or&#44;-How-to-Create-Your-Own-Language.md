@@ -54,6 +54,7 @@ While search pattern formulae make use of regular grammar, a *single* formula fo
 
 ### What's a finite automaton?
 A finite automaton is both a graph and a type of finite state machine. A finite state machine, in turn, refers to a collection of states with transitions between them. For instance, a finite state machine that only accepts the string `xyz` can be graphed in the following way:
+
 ![a simple finite state machine](https://bellentuck.github.io/images/fa-basic.png "a simple finite state machine!")
 
 Consider a "finite automaton" or "finite state machine" to be a graph with
