@@ -1,7 +1,7 @@
 This post situates regular expressions or "regex" within the computer science context of regular grammar and finite automata.
 
 ## Regexes: formulae for search patterns
-What is a regular expression? "A regular expression is an algebraic formula whose value is a pattern consisting of a set of strings, called the language of the expression" ((Randall Nelson, "Regular Expressions")[https://www.cs.rochester.edu/~nelson/courses/csc_173/fa/re.html]).
+What is a regular expression? "A regular expression is an algebraic formula whose value is a pattern consisting of a set of strings, called the language of the expression" ([Randall Nelson, "Regular Expressions"](https://www.cs.rochester.edu/~nelson/courses/csc_173/fa/re.html)).
 
 We can for instance say that the regular expression `a`, consisting of a set of strings `X` such that `X = 'a'`, matches the character `a`. Similarly, the regular expression `abra` matches the characters `abracadabra`. The reverse is not the case: the regular expression `abracadabra` does not match the characters `abra`.
 
@@ -40,7 +40,7 @@ x = t2
 ```
 This intermediate code can be optimized in various ways, depending on the platform we are utilizing for compilation. This optimized code gets turned into "target code": at last, code an assembler can understand.
 
-For more info on the compliation process described above, I recommend (Ravindrababu Ravula's *Compiler Design* YouTube series)[https://www.youtube.com/watch?v=Qkwj65l_96I].
+For more info on the compliation process described above, I recommend [Ravindrababu Ravula's *Compiler Design* YouTube series](https://www.youtube.com/watch?v=Qkwj65l_96I).
 
 ### The compiler/grammar analogy: the Chomsky Hierarchy
 Back to grammar, recalling that regular expressions implement regular grammar, and that grammar can be summed up as the entirety of a formal language’s theorems or rules pared down to a relative few axioms. How does regular grammar in particular fit into grammar in general?
@@ -49,8 +49,8 @@ The convention computer scientists have adopted to contextualize regular grammar
 
 
 ## Regexes: food for finite automata
-While search pattern formulae make use of regular grammar, a *single* formula for a search pattern is called a regular language. In turn, regular grammar--implementable in a regular expression language--performs lexical analysis via use of a "finite automaton." Put another way, regexes are regular languages that can perform lexical analysis via use of finite automata. It can also be said that "a regular language can be *accepted by* a finite automaton" ((Bill Byrne, "Chomsky Hierarchy for Languages")
-[https://www.youtube.com/watch?v=_ecle_FC6AE]).
+While search pattern formulae make use of regular grammar, a *single* formula for a search pattern is called a regular language. In turn, regular grammar--implementable in a regular expression language--performs lexical analysis via use of a "finite automaton." Put another way, regexes are regular languages that can perform lexical analysis via use of finite automata. It can also be said that "a regular language can be *accepted by* a finite automaton" ([Bill Byrne, "Chomsky Hierarchy for Languages"]
+(https://www.youtube.com/watch?v=_ecle_FC6AE)).
 
 ### What's a finite automaton?
 A finite automaton is both a graph and a type of finite state machine. A finite state machine, in turn, refers to a collection of states with transitions between them. For instance, a finite state machine that only accepts the string `xyz` can be graphed in the following way:
@@ -78,6 +78,7 @@ There exists a direct relation between finite state machines and regular express
 ![expansion of a regular expression into a finite state machine](https://bellentuck.github.io/images/fa-graph-expansion.png "expansion of a regular expression into a finite state machine")
 
 Conversely, going from a finite state machine to a regular expression is a matter of "compressing" the many-edged graph of the former into a graph with a single edge, comprised of all the characters making up the regular expression.
+
 ![compression of a finite state machine into a regular expression](https://bellentuck.github.io/images/fa-graph-compression.png "compression of a finite state machine into a regular expression")
 
 As finite automata are to pattern recognition, regular expressions are to pattern generation. "Just as finite automata are used to recognize patterns of strings, regular expressions are used to generate patterns of strings" (Nelson, "Regular Expressions"). Regular expressions yield patterns. Given input, such a pattern yields a decision procedure. Such a decision procedure yields a boolean result.
