@@ -1,7 +1,7 @@
 This brief builds toward a strategy for testing the validity of a linked tree; recursive and iterative implementations are provided in Javascript and Python. A linked tree refers to a binary search tree ("BST") implemented via a linked list. The premise entails some preliminary question-posing. Before we can ask what it means for a linked tree to be valid, we ought to untangle the distinctions between linked tree, linked list, and BST. What even *is* a tree?
 
 ## What even *is* a tree?
-A BST is, among other things, a tree. And a tree is an abstract data type ("ADT"). An ADT, in turn, is a behavioral specification. Think of a specification as a blueprint, a subjunctive term referring to something desired. An ADT can be concieved of as a blueprint for behavior. In computer science, a behavioral specification can also be referred to as an *interface*. An ADT is an interface for data.
+A BST is, among other things, a tree. And a tree is an **abstract data type ("ADT")**. Think of an ADT as a specification (spec) for behavior: "This is the behavior I want from this type of data organization." If a spec is a blueprint, an ADT is a blueprint for behavior. The behavioral specifics laid out in such a blueprint in computer science compose an *interface*. An ADT's specs can be composed into an interface for data.
 
 ### What behavior does the tree ADT specify?
 What's a tree to do? Being an interface for data, the tree ADT specifies how to relate or manage data in "tree-like" fashion. What conceptual baggage does managing data in a tree-like way require?
