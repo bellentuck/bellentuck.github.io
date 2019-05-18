@@ -5,7 +5,7 @@ What is a regular expression? "A regular expression is an algebraic formula whos
 
 We can for instance say that the regular expression `a`, consisting of a set of strings `X` such that `X = 'a'`, matches the character `a`. Similarly, the regular expression `abra` matches the characters `abracadabra`. The reverse is not the case: the regular expression `abracadabra` does not match the characters `abra`.
 
-"Regexes" are thus instances of regular grammar in action, "formulae [plural] for search patterns" being equivalent to "regular grammar." "Grammar," furthermore, references the entirety of a formal language’s "rules of the game," pared down to a relative few productions.
+"Regexes" are thus instances of regular grammar in action, "formulae [plural] for search patterns" being equivalent to "regular grammar." By "grammar" I just oversimplifyingly mean the entirety of a formal language’s "rules of the game" pared down to a relative few productions.
 
 ### The grammar/compiler analogy
 This notion of grammar is analogous to the notion of compilation in computing. And as we'll see, different types of grammar are analogous to different steps in the code compilation process.
